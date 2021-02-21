@@ -1,8 +1,8 @@
 {
-  "name": "fuck",
+  "name": "bcverification",
   "version": "1.0.0",
   "description": "",
-  "main": "aaa.js",
+  "main": "bot.js",
   "dependencies": {
     "axios": "^0.21.1",
     "discord.js": "^12.5.1"
