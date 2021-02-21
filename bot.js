@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const axios = require('axios');
 const client = new Discord.Client();
+require('dotenv').config();
 
 client.list = new Discord.Collection();
 client.roles = new Discord.Collection();
@@ -39,13 +40,18 @@ client.on('ready', async () => {
 });
 
 client.on('guildCreate', (guild) => {
-    guild.channels.cache.forEach((channel) => {
-        if (channel.type == "text" && defaultChannel == "") {
-          if (channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
-            return channel.send(`Welcome to BC Verification!\nTo configure the verified role please run bc!role @role`)
-          }
-        }
-    })
+    try {
+        guild.channels.cache.forEach((channel) => {
+            if (channel.type == "text") {
+                if (channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+                    channel.send(`Welcome to BC P Verification!\nTo configure the verified role please run bc!role @role`)
+                    throw 'stop';
+                }
+            }
+        })
+    } catch {
+        return;
+    }
 });
 
 client.on('guildMemberAdd', async (member) => {

@@ -1,11 +1,12 @@
 {
-  "name": "bcverification",
+  "name": "fuck",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "aaa.js",
   "dependencies": {
     "axios": "^0.21.1",
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {
